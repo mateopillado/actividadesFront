@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="user-info">
+            <img src="https://via.placeholder.com/50" alt="Foto de perfil">
+            <div>
+              <p>Test123</p>
+            </div>
+          </div>
+        <ul>
+          <li onclick="mostrarSeccion('inicio')">Inicio</li>
+          <li onclick="mostrarSeccion('consultarTurnos')">Consultar turnos</li>
+          <li onclick="mostrarSeccion('nuevoTurno')">Nuevo turno</li>
+        </ul>
+      </div>
+      <section id="inicio" style="display: none;">
+        <h2>Dashboard</h2>
+        <table>
+          <tr>
+            <th>Cliente</th>
+            <th>Total de turnos</th>
+          </tr>
+          <tbody id="tablaClientes"></tbody>
+        </table>
+      </section>
+      <section id="consultarTurnos" style="display: none;">
+        <h2>Turnos Registrados</h2>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Cliente</th>
+          </tr>
+          <tbody id="tablaTurnos"></tbody>
+        </table>
+      </section>
+      <section id="nuevoTurno" style="display: none;">
+        <h2>Registrar Nuevo Turno</h2>
+        <form id="formTurno" onsubmit="registrarTurno(event)">
+          <label for="id">ID:</label>
+          <input type="text" id="id" required>
+          
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" required>
+          
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" required>
+          
+          <label for="cliente">Cliente:</label>
+          <select id="cliente">
+            <option value="Cliente 1">Cliente 1</option>
+            <option value="Cliente 2">Cliente 2</option>
+          </select>
+          
+          <button type="submit">Registrar Turno</button>
+        </form>
+      </section>
+
+      <footer>
+        @2024 [Pie de página]
+      </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
